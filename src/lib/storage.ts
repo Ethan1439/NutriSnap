@@ -38,6 +38,47 @@ export const updateDailyWeight = (date: string, weight: number) => {
   localStorage.setItem(LOGS_KEY, JSON.stringify(logs));
 };
 
+export const updateDailyWater = (date: string, water: number) => {
+  const logs = getDailyLogs();
+  const currentLog = logs[date] || { date, meals: [] };
+  currentLog.water = water;
+  logs[date] = currentLog;
+  localStorage.setItem(LOGS_KEY, JSON.stringify(logs));
+};
+
+export const awardBadge = (badge: string): boolean => {
+  const profile = getProfile();
+  if (profile) {
+    const badges = profile.badges || [];
+    if (!badges.includes(badge)) {
+      badges.push(badge);
+      profile.badges = badges;
+      saveProfile(profile);
+      return true; // Newly awarded
+    }
+  }
+  return false;
+};
+
+export const getAllLoggedMeals = (): Meal[] => {
+  const logs = getDailyLogs();
+  const meals: Meal[] = [];
+  for (const date in logs) {
+    if (logs[date].meals) {
+      meals.push(...logs[date].meals);
+    }
+  }
+  // Deduplicate by name and image, keep the most recent
+  const uniqueMeals = new Map<string, Meal>();
+  for (const meal of meals.sort((a, b) => b.timestamp - a.timestamp)) {
+    const key = meal.name.toLowerCase().trim();
+    if (!uniqueMeals.has(key)) {
+      uniqueMeals.set(key, meal);
+    }
+  }
+  return Array.from(uniqueMeals.values());
+};
+
 export const clearData = () => {
   localStorage.removeItem(PROFILE_KEY);
   localStorage.removeItem(LOGS_KEY);

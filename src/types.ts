@@ -15,6 +15,8 @@ export interface UserProfile {
   proteinTarget: number;
   carbsTarget: number;
   fatTarget: number;
+  badges?: string[];
+  themePreference?: 'light' | 'dark';
 }
 
 export interface Meal {
@@ -32,4 +34,5 @@ export interface DailyLog {
   date: string; // YYYY-MM-DD
   meals: Meal[];
   weight?: number;
+  water?: number; // glasses
 }
