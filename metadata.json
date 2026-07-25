@@ -1,0 +1,6 @@
+{
+  "name": "NutriSnap",
+  "description": "An AI-powered diet and fitness tracker. Snap a photo of your meal to automatically log calories and macros, track daily goals, sync wearable devices, and connect with a supportive community.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
