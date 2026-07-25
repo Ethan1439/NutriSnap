@@ -28,17 +28,12 @@ export default function Login() {
       try {
         const code = Math.floor(100000 + Math.random() * 900000).toString();
         
-        const response = await fetch('/api/send-verification-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, code }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to send email');
-        }
+        // Simulate network delay for GitHub Pages
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Mock email
+        console.log(`[MOCK EMAIL] Verification code for ${email} is: ${code}`);
+        alert(`(Mock Email for GitHub Pages)\nYour verification code is: ${code}`);
 
         setSentCode(code);
         setShowVerification(true);

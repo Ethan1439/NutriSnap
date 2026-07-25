@@ -145,8 +145,8 @@ export default function Dashboard() {
       <header className="bg-white dark:bg-stone-800 border-b-2 border-stone-200 dark:border-stone-700 shadow-[0_4px_0_0_#f5f5f4] dark:shadow-[0_4px_0_0_#1c1917] px-6 py-4 sticky top-0 z-10 transition-colors">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
           <div>
-            <p className="text-sm font-bold text-stone-500 dark:text-stone-400 uppercase tracking-widest">{format(new Date(), 'EEEE, MMM d')}</p>
-            <h1 className="text-2xl font-black text-stone-900 dark:text-white tracking-tight">Hello, {profile.name}</h1>
+            <h1 className="text-2xl font-black text-stone-900 dark:text-white tracking-tight">FlashFeast</h1>
+            <p className="text-sm font-bold text-stone-500 dark:text-stone-400">Hello, {profile.name}</p>
           </div>
           <div className="flex items-center gap-3">
             <button onClick={toggleTheme} className="p-3 rounded-2xl bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300 border-2 border-stone-200 dark:border-stone-600 hover:bg-stone-200 dark:hover:bg-stone-600 transition-colors shadow-[0_2px_0_0_#e5e7eb] dark:shadow-[0_2px_0_0_#44403c] active:translate-y-[2px] active:shadow-none">

@@ -78,20 +78,18 @@ export default function LogMeal() {
     setError('');
 
     try {
-      const response = await fetch('/api/analyze-text', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text }),
-      });
+      // Simulate network delay for GitHub pages
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const mockResult = {
+        name: text.length > 20 ? text.substring(0, 20) + '...' : text,
+        calories: Math.floor(Math.random() * 500) + 200,
+        protein: Math.floor(Math.random() * 30) + 10,
+        carbs: Math.floor(Math.random() * 50) + 20,
+        fat: Math.floor(Math.random() * 20) + 5
+      };
 
-      if (!response.ok) {
-        throw new Error('Failed to analyze text');
-      }
-
-      const data = await response.json();
-      setAnalysisResult(data);
+      setAnalysisResult(mockResult);
     } catch (err) {
       console.error(err);
       setError('Could not analyze the description. Please try again.');
@@ -116,20 +114,18 @@ export default function LogMeal() {
     setError('');
 
     try {
-      const formData = new FormData();
-      formData.append('image', imageFile);
+      // Simulate network delay for GitHub pages
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const mockResult = {
+        name: 'Analyzed Meal',
+        calories: Math.floor(Math.random() * 500) + 200,
+        protein: Math.floor(Math.random() * 30) + 10,
+        carbs: Math.floor(Math.random() * 50) + 20,
+        fat: Math.floor(Math.random() * 20) + 5
+      };
 
-      const response = await fetch('/api/analyze-meal', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to analyze image');
-      }
-
-      const data = await response.json();
-      setAnalysisResult(data);
+      setAnalysisResult(mockResult);
     } catch (err) {
       console.error(err);
       setError('Could not analyze the image. Please try again.');

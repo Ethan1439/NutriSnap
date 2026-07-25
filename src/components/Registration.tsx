@@ -81,7 +81,7 @@ export default function Registration() {
     <div className="min-h-screen bg-stone-50 flex items-center justify-center p-6">
       <div className="w-full max-w-lg bg-white rounded-3xl border-4 border-stone-800 shadow-[8px_8px_0_0_#292524] overflow-hidden">
         <div className="p-8 text-center border-b-4 border-stone-800 bg-emerald-300">
-          <h1 className="text-3xl font-black text-stone-900 tracking-tight">Welcome to NutriSnap</h1>
+          <h1 className="text-3xl font-black text-stone-900 tracking-tight">Welcome to FlashFeast</h1>
           <p className="text-stone-800 font-bold mt-2">Let's set up your personalized fitness and diet goals.</p>
         </div>
 
