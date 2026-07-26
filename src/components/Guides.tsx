@@ -6,24 +6,24 @@ export default function Guides() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-stone-900 transition-colors pb-24">
-      <header className="bg-white dark:bg-stone-800 border-b-2 border-stone-200 dark:border-stone-700 px-6 py-4 sticky top-0 z-10 flex items-center gap-4 shadow-[0_4px_0_0_#f5f5f4] dark:shadow-[0_4px_0_0_#1c1917] transition-colors">
-        <button onClick={() => navigate('/')} className="p-2 -ml-2 rounded-xl border-2 border-transparent hover:border-stone-200 dark:hover:border-stone-600 hover:bg-stone-50 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 transition-colors pb-24">
+      <header className="bg-white dark:bg-zinc-800 border-b-2 border-zinc-200 dark:border-zinc-700 px-6 py-4 sticky top-0 z-10 flex items-center gap-4 shadow-sm dark:shadow-sm transition-colors">
+        <button onClick={() => navigate('/')} className="p-2 -ml-2 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 transition-colors">
           <ArrowLeft className="w-6 h-6" />
         </button>
-        <h1 className="text-xl font-black text-stone-900 dark:text-white tracking-tight">Health Guides</h1>
+        <h1 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Health Guides</h1>
       </header>
 
       <main className="max-w-2xl mx-auto p-6 space-y-8 mt-4">
-        <div className="bg-emerald-100 dark:bg-emerald-900/40 p-6 rounded-3xl border-2 border-emerald-200 dark:border-emerald-800 shadow-[0_6px_0_0_#a7f3d0] dark:shadow-[0_6px_0_0_#065f46]">
-          <h2 className="text-2xl font-black text-emerald-900 dark:text-emerald-100 mb-2">Ways to Lose Weight</h2>
-          <p className="text-emerald-800 dark:text-emerald-200 font-medium">Explore holistic, physical, and nutritional approaches to achieving your weight goals sustainably.</p>
+        <div className="bg-indigo-100 dark:bg-indigo-900/40 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800 shadow-md dark:shadow-md">
+          <h2 className="text-2xl font-bold text-indigo-900 dark:text-indigo-100 mb-2">Ways to Lose Weight</h2>
+          <p className="text-indigo-800 dark:text-indigo-200 font-medium">Explore holistic, physical, and nutritional approaches to achieving your weight goals sustainably.</p>
         </div>
 
         <section className="space-y-6">
-          <div className="flex items-center gap-3 border-b-2 border-stone-200 dark:border-stone-700 pb-2">
+          <div className="flex items-center gap-3 border-b-2 border-zinc-200 dark:border-zinc-700 pb-2">
             <Leaf className="w-6 h-6 text-green-600 dark:text-green-400" />
-            <h3 className="text-xl font-black text-stone-900 dark:text-white">Ayurveda & Natural Remedies</h3>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Ayurveda & Natural Remedies</h3>
           </div>
           
           <div className="grid gap-4">
@@ -43,9 +43,9 @@ export default function Guides() {
         </section>
 
         <section className="space-y-6">
-          <div className="flex items-center gap-3 border-b-2 border-stone-200 dark:border-stone-700 pb-2">
+          <div className="flex items-center gap-3 border-b-2 border-zinc-200 dark:border-zinc-700 pb-2">
             <Dumbbell className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-            <h3 className="text-xl font-black text-stone-900 dark:text-white">Effective Exercises</h3>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Effective Exercises</h3>
           </div>
           
           <div className="grid gap-4">
@@ -65,9 +65,9 @@ export default function Guides() {
         </section>
 
         <section className="space-y-6">
-          <div className="flex items-center gap-3 border-b-2 border-stone-200 dark:border-stone-700 pb-2">
-            <Apple className="w-6 h-6 text-rose-600 dark:text-rose-400" />
-            <h3 className="text-xl font-black text-stone-900 dark:text-white">Dietary Strategies</h3>
+          <div className="flex items-center gap-3 border-b-2 border-zinc-200 dark:border-zinc-700 pb-2">
+            <Apple className="w-6 h-6 text-red-600 dark:text-red-400" />
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Dietary Strategies</h3>
           </div>
           
           <div className="grid gap-4">
@@ -92,9 +92,9 @@ export default function Guides() {
 
 function GuideCard({ title, desc }: { title: string, desc: string }) {
   return (
-    <div className="bg-white dark:bg-stone-800 p-5 rounded-2xl border-2 border-stone-200 dark:border-stone-700 shadow-[0_4px_0_0_#e5e7eb] dark:shadow-[0_4px_0_0_#1c1917] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#e5e7eb] dark:hover:shadow-[0_2px_0_0_#1c1917] transition-all">
-      <h4 className="font-black text-lg text-stone-900 dark:text-white mb-2">{title}</h4>
-      <p className="text-stone-600 dark:text-stone-300 font-medium leading-relaxed">{desc}</p>
+    <div className="bg-white dark:bg-zinc-800 p-5 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm dark:shadow-sm hover:translate-y-[2px] hover:shadow-sm dark:hover:shadow-sm transition-all">
+      <h4 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{title}</h4>
+      <p className="text-zinc-600 dark:text-zinc-300 font-medium leading-relaxed">{desc}</p>
     </div>
   );
 }

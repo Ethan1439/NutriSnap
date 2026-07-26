@@ -5,16 +5,17 @@
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
+import Landing from './components/Landing';
 import Registration from './components/Registration';
 import Dashboard from './components/Dashboard';
 import LogMeal from './components/LogMeal';
 import Community from './components/Community';
 import Wearables from './components/Wearables';
+import Chatbot from './components/Chatbot';
 import DailyReports from './components/DailyReports';
 import { getProfile } from './lib/storage';
 import Settings from './components/Settings';
 import Guides from './components/Guides';
-
 import Login from './components/Login';
 
 export default function App() {
@@ -29,8 +30,10 @@ export default function App() {
 
   return (
     <Router>
+      <Chatbot />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/settings" element={<Settings />} />
