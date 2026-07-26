@@ -45,7 +45,7 @@ export default function Dashboard() {
     if (!profile || !log) return;
     
     // Evaluate badges
-    const totalCals = log.meals.reduce((sum, m) => sum + (m.calories || 0), 0);
+    const totalCals = (log.meals || []).reduce((sum, m) => sum + (m.calories || 0), 0);
     const badgesToAward: string[] = [];
     
     if (log.meals.length > 0) badgesToAward.push('First Meal');
@@ -76,10 +76,10 @@ export default function Dashboard() {
 
   if (!profile || !log) return null;
 
-  const totalCalories = log.meals.reduce((sum, meal) => sum + (meal.calories || 0), 0);
-  const totalProtein = log.meals.reduce((sum, meal) => sum + (meal.protein || 0), 0);
-  const totalCarbs = log.meals.reduce((sum, meal) => sum + (meal.carbs || 0), 0);
-  const totalFat = log.meals.reduce((sum, meal) => sum + (meal.fat || 0), 0);
+  const totalCalories = (log.meals || []).reduce((sum, meal) => sum + (meal.calories || 0), 0);
+  const totalProtein = (log.meals || []).reduce((sum, meal) => sum + (meal.protein || 0), 0);
+  const totalCarbs = (log.meals || []).reduce((sum, meal) => sum + (meal.carbs || 0), 0);
+  const totalFat = (log.meals || []).reduce((sum, meal) => sum + (meal.fat || 0), 0);
 
   const caloriePercent = Math.min((totalCalories / profile.calorieTarget) * 100, 100);
 
@@ -92,7 +92,7 @@ export default function Dashboard() {
     past7Days.forEach(date => {
       if (logs[date] && logs[date].meals.length > 0) {
         totalDaysWithData++;
-        const dailyCal = logs[date].meals.reduce((sum, meal) => sum + (meal.calories || 0), 0);
+        const dailyCal = (logs[date].meals || []).reduce((sum, meal) => sum + (meal.calories || 0), 0);
         totalCal += dailyCal;
       }
     });

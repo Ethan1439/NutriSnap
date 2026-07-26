@@ -29,7 +29,7 @@ async function startServer() {
     apiKey: "ollama-local-bypass",
   });
 
-  const useLocalLLM = process.env.USE_LOCAL_LLM === "true";
+  const useLocalLLM = process.env.USE_LOCAL_LLM !== "false";
 
   // API to analyze meal from image and text
   app.post("/api/analyze-meal", upload.single("image"), async (req, res) => {

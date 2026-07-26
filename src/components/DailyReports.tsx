@@ -29,10 +29,10 @@ export default function DailyReports() {
   const dateKey = format(currentDate, 'yyyy-MM-dd');
   const log = logs[dateKey] || { date: dateKey, meals: [] };
 
-  const totalCalories = log.meals.reduce((sum, meal) => sum + (meal.calories || 0), 0);
-  const totalProtein = log.meals.reduce((sum, meal) => sum + (meal.protein || 0), 0);
-  const totalCarbs = log.meals.reduce((sum, meal) => sum + (meal.carbs || 0), 0);
-  const totalFat = log.meals.reduce((sum, meal) => sum + (meal.fat || 0), 0);
+  const totalCalories = (log.meals || []).reduce((sum, meal) => sum + (meal.calories || 0), 0);
+  const totalProtein = (log.meals || []).reduce((sum, meal) => sum + (meal.protein || 0), 0);
+  const totalCarbs = (log.meals || []).reduce((sum, meal) => sum + (meal.carbs || 0), 0);
+  const totalFat = (log.meals || []).reduce((sum, meal) => sum + (meal.fat || 0), 0);
 
   const prevDateKey = format(subDays(currentDate, 1), 'yyyy-MM-dd');
   const prevLog = logs[prevDateKey];
@@ -59,7 +59,7 @@ export default function DailyReports() {
     const date = subDays(currentDate, 6 - i);
     const key = format(date, 'yyyy-MM-dd');
     const dayLog = (logs[key] || { date: key, meals: [] }) as DailyLog;
-    const cals = dayLog.meals.reduce((sum, meal) => sum + (meal.calories || 0), 0);
+    const cals = (dayLog.meals || []).reduce((sum, meal) => sum + (meal.calories || 0), 0);
     return {
       name: format(date, 'EEE'),
       fullDate: format(date, 'MMM d'),
